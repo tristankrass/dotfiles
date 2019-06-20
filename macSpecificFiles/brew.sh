@@ -12,6 +12,7 @@ brew cask install firefox
 brew cask install spotify
 brew cask install slack
 brew cask install alfred
+brew cask install spectacle
 
 brew cask install google-backup-and-sync
 brew cask install visual-studio-code
