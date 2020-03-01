@@ -1,0 +1,32 @@
+#!/bin/bash
+echo name your solution
+
+read solution
+
+#echo which template would you like(mvc, webapp, razor, console, page, webapi)
+#read typofapp
+dotnet new sln --output ~/Projects/$solution
+
+cd ~/Projects/$solution
+
+dotnet new classlib --framework netstandard2.1 --output Domain
+dotnet new classlib --framework netstandard2.1 --output DAL.App.EF
+dotnet new classlib --framework netstandard2.1 --output DTO
+dotnet new classlib --framework netstandard2.1 --output Contracts.DAL.Base
+
+
+dotnet sln add Domain
+dotnet sln add DAL.App.EF
+dotnet sln add DTO
+dotnet sln add Contracts.DAL.Base
+
+
+
+#dotnet new $typofapp --framework netcoreapp3.1 --output WebApp
+#dotnet sln add WebApp
+cd ~/Projects/$solution 
+
+
+# For WebApp I usually need to add following packages:
+# dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+# 
