@@ -8,3 +8,7 @@
  ![Terminal](/assets/terminal_look.png)
 ---
 ✅ I will be keeping this repo up to date when ever I change something in my dotfiles or when I decide to move to another operating system entirely.
+
+[NVM](https://github.com/nvm-sh/nvm) install node version manager(mac/linux)
+[NVM](https://github.com/coreybutler/nvm-windows) install node version manager(windows)
+
