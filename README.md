@@ -1,5 +1,8 @@
 ### 💻 Dotfiles your computer.
 
+
+Making shell scripts work from anywhere on your computer `export PATH=$PATH:<place_your_scripts_are>`
+
 * I created my repo to store all my dotfiles like .bashrc, .zsrch, .vscode etc. In case I work on another machine or something happens on my machine, It is really easy for me to setup a new development machine.
 ---
  - I am currently using mac as my development machine so all the mac specific files are store in mac folder.
