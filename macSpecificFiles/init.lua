@@ -116,11 +116,5 @@ end
 
 
 
-hs.hotkey.bind(hyper, ';', function()
-  local chargingMark = hs.battery.isCharging() and " *" or ""
-  local battery =  hs.battery.percentage() .. "%" .. chargingMark
-  hs.alert.show(os.date("%a %b %d - %H:%M | ") .. battery, 4)
-end)
-
 
 

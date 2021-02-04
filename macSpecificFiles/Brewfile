@@ -1,0 +1,238 @@
+# Tristan's Brewfile Mostly inspired by -> https://github.com/JJGO/macOS-setup/blob/master/mac-ansible/files/Brewfile
+
+cask_args appdir: '/Applications'
+
+# UNIX Defaults
+brew "binutils"
+brew "coreutils"
+brew "diffutils"
+brew "ed"
+brew "findutils"
+brew "gawk"
+brew "gnu-indent"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
+brew "gnupg"
+brew "gnutls"
+brew "grep"
+brew "gzip"
+brew "less"
+brew "lsof"
+brew "make"
+brew "nano"
+brew "openssh"
+brew "pstree"
+brew "readline"
+brew "rename"
+brew "rsync"
+brew "screen"
+brew "stow"                                 # Symlink creator, useful for dotfiles
+brew "tree"                                 # Recursive display
+brew "watch"                                # Execute and monitor every X seconds
+brew "wdiff"
+brew "wget"
+brew "libtool"                              # Generic library support script
+
+
+### GIT
+brew "git"
+brew "git-extras"                           # Extra commands for convenience
+brew "git-crypt"                            # Enables secretfiles
+
+
+### EDITORS
+# Widely used CLI editors
+brew "vim"
+brew "neovim"
+
+
+### CLI Utils
+
+brew "ack"                                  # Better grep
+brew "atool"                                # A script for managing file archives (aunpack)
+brew "aspell" # Spell checker
+brew "autossh"                              # Persistent SSH port forwarding
+brew "bat"                                  # Improved cat with highlight and paging
+brew "bitwarden-cli"                        # Bitwarden CLI utility
+brew "borgbackup"                           # Incremental and Deduplication backup tool
+brew "broot"                                # Terminal file navigator
+brew "diff-so-fancy"                        # More colorful diff
+brew "dockutil"                             # Manages the dock icons
+brew "duti"                                 # Set default document and URL handlers
+brew "elinks"                               # CLI web browser
+brew "fasd"                                 # Fasd offers quick access to files and directories
+brew "fd"                                   # Fast alternative to find
+brew "fdupes"                               # CLI duplicate finder
+brew "fping"                                # More usable ping
+brew "fzf"                                  # Fuzzy finder
+brew "graphviz"                             # Graph visualization software
+brew "gocryptfs"                            # FUSE encrypted FS
+brew "hardlink-osx"                         # Hard link functionality on macOS
+brew "htop"                                 # Display system usage
+brew "imagemagick"  # Good image editing software
+brew "jdupes"                               # Better fdupes
+brew "lnav"                                 # Log viewer
+brew "lunchy"                               # Launchctl util
+brew "mas"                                  # Install software from app store
+brew "cmark"                                # Mkvtoolnix dependency
+brew "ctags"                                # ctags binaries are required for vim
+brew "mkvtoolnix"  # Mkv tools
+brew "media-info"                           # Media info for videos
+brew "minicom"                              # Serial port communication
+brew "moreutils"                            # Some extra niceties including parallel
+brew "ncdu"                                 # Storage analyzer
+brew "nmap"                                 # Network management package
+brew "qpdf"                                 # Pdf CLI utility
+brew "ranger"                               # Console file manager with VI key bindings
+brew "ripgrep"                              # Search similar to ag but faster
+brew "rclone"                               # Rsync to cloud storage
+brew "rmate"                                # Remote TextMate for SSH sublime
+brew "shellcheck"                           # Test shell scripts for errors
+brew "terminal-notifier"                    # Enable terminal notifications for scripts
+brew "tig"                                  # text-mode interface for git
+brew "the_silver_searcher"                  # Search similar to ack but faster
+cask "osxfuse"                              # Dependency of sshfs and ntfs-3g
+brew "sshfs"                                # TO mount disks over SSH
+cask "ngrok" # Reverse proxy, secure introspectable tunnels to localhost
+brew "doxygen"                              # tmux dependency
+brew "tmux"  # Terminal multiplexer and server
+brew "trash"                                # To use OS trash instead of rm forever
+brew "unison"                               # Sync both ways folders
+brew "wdiff"                                # Word by word diff
+brew "write-good"                           # CLI tool for technical writing
+brew "youtube-dl"                           # Download YouTube (and others) from CLI
+brew "pandoc" # Swiss-army knife of markup format conversion
+brew "midnight-commander" # Terminal-based visual file manager
+brew "tmux" # Terminal multiplexer
+brew "gh" # GitHub command-line tool
+
+## Security Related - Objective See
+cask "lulu"          # Network monitor and firewall (for blocking trustd among other things)
+# cask "donotdisturb"  # Monitors lid for Evil Maid attacks
+cask "knockknock"    # Manage login items, periodic scripts, ql plugins, &c
+cask "taskexplorer"  # Look at running tasks and their open dylibs, files and network connections
+cask "oversight"     # Monitor mic and camera to prevent unwarranted access
+cask "blockblock"    # Alerts about persistent software installation
+cask "reikey"        # Anti key logger tool
+cask "netiquette"    # Netork monitor to explore network sockets and connections
+cask "ransomwhere"   # Anti ransomware tool
+cask "kextviewr"     # Kernel extension monitor tool
+brew "sslscan" # Test SSL/TLS enabled services to discover supported cipher suites
+
+### PROGRAMMING LANGUAGES
+
+brew "pyenv"                                # Python version management
+brew "pyenv-virtualenv"                     # For managing virtual envs
+brew "pyenv-ccache"                         # Make Python build faster
+brew "pyenv-which-ext"                      # Integrate pyenv and system commands (looks up commands in other python versions)
+brew "openjdk" # Development kit for the Java programming language
+brew "r" # Software environment for statistical computing
+brew "node" # Platform built on V8 to build network applications
+brew "npm"
+brew "java"
+brew "scala" # JVM-based programming language
+
+brew "nvm" # Manage multiple Node.js versions
+
+brew "stack" # Haskell
+brew "lua"
+brew "luarocks"
+
+
+
+
+
+### Window management
+tap 'koekeishiya/formulae'
+brew 'koekeishiya/formulae/yabai'
+
+
+
+
+
+### DESKTOP Applications
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
+
+cask "caffeine"                             # Prevents the computer from sleeping
+cask "dozer" # Tool to hide status bar icons
+cask "figma"
+cask "firefox" # Web browser
+cask "flux" # Screen color temperature controller
+cask "alfred" # Application launcher and productivity software
+cask "anki" # Memory training application
+cask "bitwarden" # Desktop password and login vault
+cask "brooklyn" # Screen saver based on animations presented during Apple Special Event Brooklyn                    # Keep the screen from sleeping
+cask "calibre" # E-books management software
+cask "docker" # App to build and share containerized applications and microservices
+cask "gimp" # Free and open-source image editor
+cask "google-chrome" # Web browser
+cask "hammerspoon" # Desktop automation application
+cask "iterm3" # Terminal emulator as alternative to Apple's Terminal app
+cask "karabiner-elements" # Keyboard customizer
+cask "postman" # Collaboration platform for API development
+cask "kindle" # Interface for reading and syncing eBooks
+cask "jetbrains-toolbox" # JetBrains tools manager
+cask "alacritty"                            # Good terminal emulator
+cask "appcleaner"                           # Removes plist along with the app
+cask "authy"								# 2FA App
+cask "bettertouchtool"                      # Macros and gestures (PAID -license)
+cask "bitbar"                               # Menu custom script display
+cask "etrecheckpro"                         # System maintenance
+cask "fuzzyclock"                           # Simple menubar fuzzy clock
+cask "logitech-options"                     # Drivers for keyboard and mouse
+cask "logitech-unifying"                    # Drivers for keyboard and mouse
+cask "onyx"                                 # Tweak tool for OS
+cask "mos"                                  # Mouse reverser and better scroll
+cask "paintbrush"                           # MS paint equivalent
+cask "selfcontrol"                          # Blacklisting websites
+cask "simplenote"                           # Notes app
+cask "skim"                                 # Better PDF tool with Sublime Text integration
+cask "spotify"                              # Music streaming
+cask "the-unarchiver"                       # To deflate and decompress files
+cask "veracrypt"                            # Disk and disk image encryption
+cask "vlc"                                  # Video Player
+cask "Slack"
+cask "vimr"                                 # NEovim GUI for mac
+cask "visual-studio-code"
+
+
+
+
+
+
+# Quick look plugins
+
+cask "glance"   # Wide array of code, json, md, tsv,...
+cask "qladdict" # SRT files
+cask "qlimagesize"  # Images
+cask "qlmobi"  # Mobi ebooks
+cask "qlprettypatch"  # .patch files
+cask "qlstephen"  # catch-all for text files like CHANGELOG, README, INSTALL
+cask "qlvideo"    # Preview video thumbnails
+cask "quicklook-csv"  # CSV
+cask "quicknfo"   # .nfo files
+cask "suspicious-package" # For .pkgs
+
+# Fonts
+tap 'homebrew/cask-fonts'
+cask "font-fira-mono"
+cask "font-fira-sans"
+cask "font-victor-mono"
+cask "font-fira-code"
+cask "font-computer-modern"
+
+# Docker
+brew "docker"                               # Docker Containers
+brew "docker-compose"
+
+
+### Mac App Store Installs
+mas "Todoist", id: 585829637
+mas "Disk Speed Test", id: 425264550
+
+mas "WireGuard", id: 1451685025                     # Wireguard macOS client
+mas "Amphetamine" id: 937984704                     # Keep the screen from sleeping
+mas "Xcode", id: 497799835                          # Apple's developper tools
+
