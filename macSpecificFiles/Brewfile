@@ -196,7 +196,7 @@ cask "vlc"                                  # Video Player
 cask "Slack"
 cask "vimr"                                 # NEovim GUI for mac
 cask "visual-studio-code"
-
+cask "toggl-track"                          # Track where the time is going
 
 
 
