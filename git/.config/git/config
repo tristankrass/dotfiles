@@ -1,3 +1,49 @@
 [user]
 	name = Tristan Krass
 
+[alias]
+    s = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    d = difftool
+    dt = difftool
+    amend = commit --amend
+    l = "!. ~/.githelpers && pretty_git_log"
+
+    # list files which have changed since REVIEW_BASE
+    # (REVIEW_BASE defaults to 'master' in my zshrc)
+    files = !git diff --name-only $(git merge-base HEAD main)
+
+    # Same as above, but with a diff stat instead of just names
+    # (better for interactive use)
+    stat = !git diff --stat $(git merge-base HEAD main)
+
+    
+    depgraph = !git madge image --webpack-config webpack.config.js --basedir . --style solarized-dark src
+
+
+    # Open all files changed since REVIEW_BASE in Vim tabs
+    # Then, run fugitive's :Gdiff in each tab, and finally
+    # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
+    review = !vim -p $(git files) +\"tabdo Gdiff main\" +\"let g:gitgutter_diff_base = 'main'\"
+
+
+    reviewone = !vim -p +\"tabdo Gdiff main\" +\"let g:gitgutter_diff_base = 'main'\"
+
+[core]
+	excludesFile = ~/.config/git/ignore
+   	editor = "nvim"
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+# [diff]
+# 	tool = Kaleidoscope
+
+[init]
+	defaultBranch = main
+

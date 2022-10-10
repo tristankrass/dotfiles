@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  vi-mode
   docker
   docker-compose
   extract
@@ -108,6 +109,14 @@ source $ZSH/oh-my-zsh.sh
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
+# Source global aliases
 if [ -f "$HOME/.bash_aliases" ] ; then
   source "$HOME/.bash_aliases"
 fi
+
+# Source work related aliases
+if [ -f "$HOME/.work_aliases" ] ; then
+  source "$HOME/.work_aliases"
+fi
+
+
