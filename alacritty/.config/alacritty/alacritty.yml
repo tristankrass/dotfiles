@@ -11,7 +11,7 @@ font:
   bold_italic:
     style: Bold Italic
     family: "Cascadia Code PL"
-  size: 16
+  size: 18
 
 mouse:
   hide_when_typing: true
