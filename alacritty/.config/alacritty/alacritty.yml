@@ -1,16 +1,16 @@
 font:
   normal:
     style: Regular
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
   bold:
     style: Bold
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
   italic:
     style: Italic
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
   bold_italic:
     style: Bold Italic
-    family: "Cascadia Code PL"
+    family: "JetBrains Mono"
   size: 18
 
 mouse:
