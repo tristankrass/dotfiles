@@ -76,6 +76,9 @@ plugins=(
   docker-compose
   extract
   git
+  zsh-fzf-history-search
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
