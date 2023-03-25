@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+alias python='python3'
 
 
 # Source global aliases
@@ -114,9 +115,14 @@ if [ -f "$HOME/.bash_aliases" ] ; then
   source "$HOME/.bash_aliases"
 fi
 
+
+# FZF - https://github.com/junegunn/fzf#using-homebrew
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh)"
+
 # Source work related aliases
 if [ -f "$HOME/.work_aliases" ] ; then
   source "$HOME/.work_aliases"
 fi
-
 
