@@ -43,7 +43,7 @@ function stopPomoBreak()
     pomoActive = false
 end
 
-hs.hotkey.bind(hyper, "P", stopPomoBreak)
+hs.hotkey.bind(hyperKey, "p", stopPomoBreak)
 
 hs.urlevent.bind("pomodoroBreak", function(eventName, params)
     pomodoroBreak(params['min'])

@@ -1,11 +1,33 @@
 -- More inspiration: https://github.com/JJGO/dotfiles/blob/master/mac/.hammerspoon/init.lua
 
+-- Define Hyper key
 hyperKey = {"cmd", "alt", "ctrl", "shift"} 
+
+-- Be on mute by default
+hs.loadSpoon("PushToTalk")
+spoon.PushToTalk.detect_on_start = true
+spoon.PushToTalk.app_switcher = {
+    ['zoom.us'] = 'push-to-talk'
+}
+spoon.PushToTalk:start()
+
+-- Wifi Notifier
+hs.loadSpoon("WifiNotifier")
+spoon.WifiNotifier.notificationTitle = "Wi-Fi Network Change"
+spoon.WifiNotifier.notificationSubtitle = "Connected to:"
+spoon.WifiNotifier:start()
+
+-- Get shortcuts for a given app
+hs.loadSpoon("KSheet")
+
+-- Set a hotkey to show keyboard shortcuts for the active application
+hs.hotkey.bind(hyperKey, "'", function()
+  spoon.KSheet:toggle()
+end)
 
 apps = {
   {'i', 'IntelliJ IDEA Ultimate'},
   {'n', 'Notion'},
-  -- {'v', 'Visual Studio Code'},
   {'s', 'Slack'},
   {'t', 'Terminal'},
   {'a', 'Alacritty'},
@@ -98,9 +120,46 @@ end
 
 monitorWatcher = hs.screen.watcher.new(monitorWatcherCallback)
 
+
 -- Reload config
 hs.hotkey.bind(hyperKey, "R", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
 
+-- helper functions
+function printt(table)
+  for k, v in pairs(table) do
+      print(k .. "--\t" .. tostring(v))
+  end
+end
+
+hs.urlevent.bind("alert", function(eventName, params)
+  hs.alert.show(params['msg'])
+end)
+
+hs.urlevent.bind("screencapture", function(eventName, params)
+  os.execute("screencapture -R-1440,-175,5280,2600 " .. params['path'])
+end)
+
+
+function clickMenuItem(app, item)
+  app = hs.application.find(app)
+  app:selectMenuItem(item)
+end
+
+function file_exists(name)
+  local f=io.open(name,"r")
+  if f~=nil then io.close(f) return true else return false end
+end
+
+function require_if_exists(file)
+  if file_exists(file .. ".lua") then
+      print(" #### Loading " .. file)
+      require(file)
+  end
+end
+
+
+require_if_exists("pomo")
+-- require_if_exists("hs-fuzzy-window-picker")
