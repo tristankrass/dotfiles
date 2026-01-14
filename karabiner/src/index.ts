@@ -9,7 +9,7 @@ import {
 // CONFIGURATION
 // =============================================================================
 
-const PROFILE_NAME = 'Default profile'
+const PROFILE_NAME = 'Default'
 
 // =============================================================================
 // MAIN CONFIGURATION
