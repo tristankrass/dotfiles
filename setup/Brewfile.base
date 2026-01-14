@@ -1,0 +1,37 @@
+# Taps
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+
+# Binaries
+brew 'bat' # Better cat with syntax highlighting
+brew 'coreutils' # Those that come with macOS are outdated
+brew 'eza' # Modern ls replacement with icons
+brew 'fd' # Better find
+brew 'ffmpeg'
+brew 'gh'
+brew 'git'
+brew 'grep'
+brew 'httpie'
+brew 'jq' # Used for spatie/visit
+brew 'mackup'
+brew 'mas' # Mac App Store manager
+brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 'ripgrep' # Better grep
+brew 'svn' # Needed to install fonts
+
+brew 'imagemagick'
+
+# Apps
+cask 'discord'
+cask 'docker'
+cask 'figma'
+cask 'firefox'
+cask 'github'
+cask 'google-chrome'
+cask 'pastebot'
+cask 'transmit'
+cask 'visual-studio-code'
+
+# Quicklook
+cask 'qlmarkdown'
+cask 'quicklook-json'
