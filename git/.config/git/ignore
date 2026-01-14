@@ -67,3 +67,4 @@ dependency-graph.svg
 # Git #
 ###########
 *.orig
+**/.claude/settings.local.json

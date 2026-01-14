@@ -1,0 +1,16 @@
+{
+  "name": "karabiner-config",
+  "private": true,
+  "scripts": {
+    "build": "npx ts-node src/index.ts",
+    "watch": "npx ts-node-dev --respawn src/index.ts"
+  },
+  "dependencies": {
+    "karabiner.ts": "^1.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

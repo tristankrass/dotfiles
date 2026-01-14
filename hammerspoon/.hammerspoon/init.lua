@@ -1,7 +1,14 @@
--- More inspiration: https://github.com/JJGO/dotfiles/blob/master/mac/.hammerspoon/init.lua
+ -- More inspiration: https://github.com/JJGO/dotfiles/blob/master/mac/.hammerspoon/init.lua
 
 -- Define Hyper key
-hyperKey = {"cmd", "alt", "ctrl", "shift"} 
+hyperKey = {"cmd", "alt", "ctrl", "shift"}
+
+-- ============================================
+-- CAPS LOCK: ESCAPE (tap) / HYPER (hold)
+-- Handled by Karabiner (karabiner.json)
+-- to_if_alone: Caps Lock tap → Escape
+-- to_if_held_down: Caps Lock hold → Hyper (⌃⌥⇧⌘)
+-- ============================================
 
 -- Be on mute by default
 hs.loadSpoon("PushToTalk")
@@ -27,9 +34,9 @@ end)
 
 apps = {
   {'i', 'IntelliJ IDEA Ultimate'},
-  {'n', 'Notion'},
+  {'n', 'Notes'},
   {'s', 'Slack'},
-  {'t', 'Terminal'},
+  {'t', 'iTerm'},
   {'a', 'Alacritty'},
   {'c', 'Google Chrome'}
 }
@@ -104,10 +111,6 @@ end
 monitorWatcher = hs.screen.watcher.new(monitorWatcherCallback)
 monitorWatcher:start()
 
--- moveUtilitiesToLaptopScreen()
-
--- run moveWindowsToExternalMonitor() when monitor is connected/disconnected
-
 --- When connecting laptop at work to two monitors
 local allScreens = hs.screen.allScreens()
 for i, screen in ipairs(allScreens) do
@@ -119,7 +122,6 @@ for i, screen in ipairs(allScreens) do
 end
 
 monitorWatcher = hs.screen.watcher.new(monitorWatcherCallback)
-
 
 -- Reload config
 hs.hotkey.bind(hyperKey, "R", function()
@@ -134,22 +136,13 @@ function printt(table)
   end
 end
 
-hs.urlevent.bind("alert", function(eventName, params)
-  hs.alert.show(params['msg'])
-end)
-
-hs.urlevent.bind("screencapture", function(eventName, params)
-  os.execute("screencapture -R-1440,-175,5280,2600 " .. params['path'])
-end)
-
-
 function clickMenuItem(app, item)
   app = hs.application.find(app)
   app:selectMenuItem(item)
 end
 
 function file_exists(name)
-  local f=io.open(name,"r")
+  local f=io.open(name,"r") 
   if f~=nil then io.close(f) return true else return false end
 end
 
@@ -163,3 +156,9 @@ end
 
 require_if_exists("pomo")
 -- require_if_exists("hs-fuzzy-window-picker")
+hs.loadSpoon("Hammerflow")
+spoon.Hammerflow.loadFirstValidTomlFile({
+    "home.toml"
+    -- "work.toml",
+    -- "Spoons/Hammerflow.spoon/sample.toml"
+})

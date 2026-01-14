@@ -1,0 +1,15 @@
+# Ignore secrets
+zsh/secrets.zsh
+secrets.zsh
+**/secrets.zsh
+
+# Ignore Karabiner dependencies and build artifacts
+karabiner/node_modules
+karabiner/package-lock.json
+karabiner/.DS_Store
+karabiner/dist
+karabiner/out
+karabiner/coverage
+
+# System files
+.DS_Store
