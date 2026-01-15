@@ -72,57 +72,44 @@ brew bundle --file=Brewfile.base
 
 ### Secrets (API Keys, Tokens)
 
-Sensitive credentials are stored in `zsh/secrets.zsh` which is git-ignored.
+Sensitive credentials are stored in `zsh/.config/zsh/secrets.zsh` which is git-ignored.
 
 1. Copy the template:
    ```bash
-   cp zsh/secrets.zsh.template zsh/secrets.zsh
+   cp zsh/.config/zsh/secrets.zsh.template zsh/.config/zsh/secrets.zsh
    ```
 
-2. Fill in your actual credentials in `zsh/secrets.zsh`
+2. Fill in your actual credentials in `zsh/.config/zsh/secrets.zsh`
 
-The .zshrc will automatically source this file if it exists.
+The .zshrc will automatically source this file from `~/.config/zsh/secrets.zsh`.
 
 ### Work-Specific Configuration
-
-Work-related aliases and functions can be stored in `~/.work_aliases` (external to this repo). The .zshrc will automatically source this file if it exists.
-
-Example `~/.work_aliases`:
-```bash
-# Work-specific functions and aliases
-export PROJECT_PATH="/Users/yourname/Projects/work"
-alias work="cd $PROJECT_PATH"
-```
-
+...
 ## Multi-Machine Setup
 
 To use these dotfiles across multiple machines:
 
 1. Clone this repository:
    ```bash
-   git clone git@github.com:tristankrass/dotfiles.git ~/og-dotfiles
+   git clone git@github.com:tristankrass/dotfiles.git ~/dotfiles
    ```
 
-2. Create a symlink (optional, for compatibility with existing configs):
+2. Install packages:
    ```bash
-   ln -s ~/og-dotfiles ~/.dotfiles
-   ```
-
-3. Install packages:
-   ```bash
-   cd ~/og-dotfiles/setup
+   cd ~/dotfiles/setup
    brew bundle --file=Brewfile.base
    ```
 
-4. Stow the configurations you need:
+3. Stow the configurations you need:
    ```bash
+   cd ~/dotfiles
    stow -v alacritty bash git hammerspoon karabiner tmux zsh
    ```
 
-5. Set up secrets:
+4. Set up secrets:
    ```bash
-   cp zsh/secrets.zsh.template zsh/secrets.zsh
-   # Edit zsh/secrets.zsh with your credentials
+   cp zsh/.config/zsh/secrets.zsh.template zsh/.config/zsh/secrets.zsh
+   # Edit zsh/.config/zsh/secrets.zsh with your credentials
    ```
 
 6. Build Karabiner config (if using):

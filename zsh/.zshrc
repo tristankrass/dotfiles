@@ -190,8 +190,8 @@ eval "$(pyenv init - zsh)"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # Source secrets (API keys, etc.) - Ignored by Git
-if [ -f "$HOME/.dotfiles/zsh/secrets.zsh" ]; then
-    source "$HOME/.dotfiles/zsh/secrets.zsh"
+if [ -f "$HOME/.config/zsh/secrets.zsh" ]; then
+    source "$HOME/.config/zsh/secrets.zsh"
 fi
 
 # Added by Antigravity
