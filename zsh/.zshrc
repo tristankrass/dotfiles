@@ -113,9 +113,9 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias python='python3'
 
 
-# Source global aliases
-if [ -f "$HOME/.bash_aliases" ] ; then
-  source "$HOME/.bash_aliases"
+# Source general aliases
+if [ -f "$HOME/.config/zsh/aliases.zsh" ] ; then
+  source "$HOME/.config/zsh/aliases.zsh"
 fi
 
 # Source modern CLI tool enhancements (eza, bat, ripgrep, fd)

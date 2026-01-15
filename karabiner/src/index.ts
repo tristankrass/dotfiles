@@ -43,6 +43,7 @@ writeToProfile(PROFILE_NAME, [
       map('m').toApp('Messages'),             // iMessage
       map('n').toApp('Notes'),                // Apple Notes
       map('p').toApp('Spotify'),              // Music (Play)
+      map('a').toApp('FluidVoice'),          // My current dictation app
       map('s').toApp('Slack'),
       map('t').toApp('Ghostty'),              // Terminal
       map('w').toApp('Passwords'),            // Apple Passwords

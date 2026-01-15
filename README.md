@@ -4,8 +4,6 @@ My personal configuration files for macOS.
 
 ## Structure
 
-- **alacritty**: Terminal configuration
-- **bash**: Bash shell configuration
 - **git**: Git configuration
 - **hammerspoon**: Desktop automation (window management, etc.)
 - **karabiner**: Keyboard customization (Karabiner-Elements)
@@ -26,7 +24,7 @@ My personal configuration files for macOS.
 1. Use `stow` to symlink the configuration files to your home directory:
 
    ```bash
-   stow -v alacritty bash git hammerspoon karabiner tmux zsh
+   stow -v git hammerspoon karabiner tmux zsh
    ```
 
 2. Set up Node.js using `fnm`:
@@ -103,7 +101,7 @@ To use these dotfiles across multiple machines:
 3. Stow the configurations you need:
    ```bash
    cd ~/dotfiles
-   stow -v alacritty bash git hammerspoon karabiner tmux zsh
+   stow -v git hammerspoon karabiner tmux zsh
    ```
 
 4. Set up secrets:
