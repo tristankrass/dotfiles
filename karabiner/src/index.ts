@@ -39,6 +39,7 @@ writeToProfile(PROFILE_NAME, [
       map('e').toApp('Mail'),                 // Email (Apple Mail)
       map('f').toApp('Finder'),
       map('g').toApp('Google Chrome'),
+      map('r').toApp('Reminders'),             // Reminders
       map('m').toApp('Messages'),             // iMessage
       map('n').toApp('Notes'),                // Apple Notes
       map('p').toApp('Spotify'),              // Music (Play)
