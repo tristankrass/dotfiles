@@ -1,5 +1,5 @@
-# If you come from bash you might have to change your /Users/tristankrass/.antigravity/antigravity/bin:/Users/tristankrass/.pyenv/shims:/Users/tristankrass/Library/pnpm:/Library/TeX/texbin:/Users/tristankrass/.local/state/fnm_multishells/2074_1768112652160/bin:/Users/tristankrass/.sdkman/candidates/spark/current/bin:/Users/tristankrass/.sdkman/candidates/scala/current/bin:/Users/tristankrass/.sdkman/candidates/java/current/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tristankrass/.local/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/share/dotnet:~/.dotnet/tools:/Applications/Ghostty.app/Contents/MacOS:/Users/tristankrass/Library/Application Support/Coursier/bin:/Users/tristankrass/.dotnet/tools:/Users/tristankrass/Library/Application Support/Coursier/bin:/opt/homebrew/opt/fzf/bin:/Users/tristankrass/.iximiuz/labctl/bin.
-# export PATH=/Users/tristankrass/bin:/usr/local/bin:/Users/tristankrass/.antigravity/antigravity/bin:/Users/tristankrass/.pyenv/shims:/Users/tristankrass/Library/pnpm:/Library/TeX/texbin:/Users/tristankrass/.local/state/fnm_multishells/2074_1768112652160/bin:/Users/tristankrass/.sdkman/candidates/spark/current/bin:/Users/tristankrass/.sdkman/candidates/scala/current/bin:/Users/tristankrass/.sdkman/candidates/java/current/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tristankrass/.local/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/share/dotnet:~/.dotnet/tools:/Applications/Ghostty.app/Contents/MacOS:/Users/tristankrass/Library/Application Support/Coursier/bin:/Users/tristankrass/.dotnet/tools:/Users/tristankrass/Library/Application Support/Coursier/bin:/opt/homebrew/opt/fzf/bin:/Users/tristankrass/.iximiuz/labctl/bin
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -118,6 +118,10 @@ if [ -f "$HOME/.bash_aliases" ] ; then
   source "$HOME/.bash_aliases"
 fi
 
+# Source modern CLI tool enhancements (eza, bat, ripgrep, fd)
+if [ -f "$HOME/.config/zsh/modern-tools.zsh" ] ; then
+  source "$HOME/.config/zsh/modern-tools.zsh"
+fi
 
 # FZF - https://github.com/junegunn/fzf#using-homebrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -137,7 +141,7 @@ eval "$(fnm env --use-on-cd)"
 export PATH="/Library/TeX/texbin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/tristankrass/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -191,11 +195,11 @@ if [ -f "$HOME/.dotfiles/zsh/secrets.zsh" ]; then
 fi
 
 # Added by Antigravity
-export PATH="/Users/tristankrass/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 
 
 # Iximiuz
-export PATH=$PATH:/Users/tristankrass/.iximiuz/labctl/bin
+export PATH=$PATH:$HOME/.iximiuz/labctl/bin
 source <(labctl completion zsh)
 
